@@ -33,7 +33,7 @@ public class LogIn_Application extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        JTuser = new javax.swing.JTextField();
+        Juser = new javax.swing.JTextField();
         blogin = new javax.swing.JButton();
         bexit = new javax.swing.JButton();
         Jpassword = new javax.swing.JPasswordField();
@@ -51,9 +51,9 @@ public class LogIn_Application extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Password");
 
-        JTuser.addActionListener(new java.awt.event.ActionListener() {
+        Juser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTuserActionPerformed(evt);
+                JuserActionPerformed(evt);
             }
         });
 
@@ -70,6 +70,12 @@ public class LogIn_Application extends javax.swing.JFrame {
         bexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bexitActionPerformed(evt);
+            }
+        });
+
+        Jpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JpasswordActionPerformed(evt);
             }
         });
 
@@ -97,20 +103,21 @@ public class LogIn_Application extends javax.swing.JFrame {
                 .addGap(95, 95, 95))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(86, 86, 86)
-                            .addComponent(bexit))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(43, 43, 43)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(JTuser, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                .addComponent(Jpassword))
-                            .addGap(2, 2, 2)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(86, 86, 86)
+                                .addComponent(bexit))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Juser, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                                    .addComponent(Jpassword))))
+                        .addGap(2, 2, 2))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(JshowPassword)
                         .addGroup(layout.createSequentialGroup()
@@ -128,7 +135,7 @@ public class LogIn_Application extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(JTuser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Juser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -151,19 +158,19 @@ public class LogIn_Application extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JTuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTuserActionPerformed
+    private void JuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTuserActionPerformed
+    }//GEN-LAST:event_JuserActionPerformed
 
     private void bloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloginActionPerformed
         // TODO add your handling code here:
-        if (JTuser.getText().equals("")){
+        if (Juser.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill Out Username");
         }
         else if (Jpassword.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Password");
         }
-        else if(JTuser.getText().contains("Admin123")&& Jpassword.getText().contains("123456")){
+        else if(Juser.getText().contains("Admin123")&& Jpassword.getText().contains("123456")){
             JOptionPane.showMessageDialog(null, "LogIn Successful");
         }
         else{
@@ -177,7 +184,7 @@ public class LogIn_Application extends javax.swing.JFrame {
             Jpassword.setEchoChar((char)0);
         }
         else {
-            Jpassword.setEchoChar('*');
+            Jpassword.setEchoChar('●');
         }
     }//GEN-LAST:event_JshowPasswordActionPerformed
 
@@ -187,8 +194,16 @@ public class LogIn_Application extends javax.swing.JFrame {
     }//GEN-LAST:event_bexitActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    
+    Juser.setText("");
+    Jpassword.setText("");
+    JshowPassword.setSelected(false);
+    Jpassword.setEchoChar('●'); 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void JpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JpasswordActionPerformed
+
+    }//GEN-LAST:event_JpasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,9 +231,9 @@ public class LogIn_Application extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField JTuser;
     private javax.swing.JPasswordField Jpassword;
     private javax.swing.JCheckBox JshowPassword;
+    private javax.swing.JTextField Juser;
     private javax.swing.JButton bexit;
     private javax.swing.JButton blogin;
     private javax.swing.JButton jButton1;
